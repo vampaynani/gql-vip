@@ -6,15 +6,6 @@ import { PERSON } from './Queries';
 import { CREATE_USER,LOGIN_USER } from './Mutations';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      password: '',
-      birthDate: ''
-    }
-  }
   getPerson(id){
     var query = `query GetPerson($id: ID!){
       packageInfo{
@@ -52,7 +43,6 @@ class App extends Component {
     // this.getPerson(10);
   }
   render() {
-    const {email, password, name, birthDate} = this.state;
     return (
       <div className="App">
         <header className="App-header">

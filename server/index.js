@@ -21,7 +21,6 @@ const server = new GraphQLServer({
         throw "Unauthorized";
       }
       const token = AuthHeader.replace('Bearer ', '');
-      console.log(token);
       const decodedToken = jwt.verify(token, 'secretpassphrase');
       const isUser = await DBUser.findById(decodedToken.user._id);
       if(!isUser){
